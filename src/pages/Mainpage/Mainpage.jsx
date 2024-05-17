@@ -5,7 +5,6 @@ import React from "react";
 export default function Mainpage(){
     return(
         <div>
-            <h1>salom</h1>
         </div>
     )
 }

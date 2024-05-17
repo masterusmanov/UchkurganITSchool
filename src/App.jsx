@@ -9,7 +9,6 @@ function App() {
     <div >
       <Header/>
       <div className="container mx-auto">
-        <h1 className="text-red-500">salom</h1>
         <Mainpage/>
       </div>
     </div>
