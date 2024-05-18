@@ -9,18 +9,18 @@ import circletext from "../../assets/images/header/circletext.png"
 
 export default function Header(){
     return(
-        <div className="bg-[#D2E6E4] rounded-b-3xl">
-            <img src={liner} alt="" className="absolute mx-[25%]"/>
-            <div className="bg-[#D2E6E4] rounded-full p-7 absolute bottom-[100px] right-[850px]">
+        <div className="bg-[#D2E6E4] rounded-b-3xl mb-[200px]">
+            <div className="bg-[#D2E6E4] rounded-full p-7 absolute top-[720px] left-[50%] transform translate-x-[-50%] translate-y-[-50%]">
                     <img src={circletext} alt="" className="w-[170px] absolute right-6"/>
                 <div className="bg-[#0B7077] rounded-full p-14">
-                    <img src={play} alt="" className="border border-red-500 w-[50px] mx-auto"/>
+                    <img src={play} alt="" className="w-[50px] mx-auto"/>
                 </div>
             </div>
-            <div className="container mx-auto h-full border">
-                <div className="flex justify-between items-center font-nunito gap-6 font-[700]  h-[100px]">
+            <div className="container mx-auto h-full ">
+                <img src={liner} alt="" className="absolute mx-[400px]"/>
+                <div className="flex justify-between items-center font-nunito gap-6 font-[700]  h-[100px] relative">
                     <img src={logo} alt="" className="w-[150px]"/>
-                    <div className="flex justify-end items-center gap-8 border w-1/2">
+                    <div className="flex justify-end items-center gap-8  w-1/2">
                         <a href="#">Bosh sahifa</a>
                         <a href="#">Kariyeramiz</a>
                         <a href="#">Biz haqimizda</a>
@@ -31,9 +31,9 @@ export default function Header(){
                         </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <div className="w-1/2">
-                         <p className="bg-white font-[600] inline-block py-2 px-4 rounded-xl">Hech qachon o`rganishni to`xtatmang</p>
-                        <h1 className="text-[64px] text-[#0B7077] font-[700]">Onlayn kurslar orqali mahoratingizni oshiring</h1>
+                    <div className="w-1/2 font-nunito">
+                         <p className="bg-white font-[600] inline-block py-2 px-4 rounded-xl">Hech qachon o`rganishni to`xtatmang!</p>
+                        <h1 className="text-[64px] text-[#0B7077] font-[700] my-[50px]">Onlayn kurslar orqali mahoratingizni oshiring!</h1>
                         <div>
                             <a href="#" className="bg-[#FD661F] py-2 px-6 rounded-xl text-[18px] text-white">Online kurs</a> 
                         </div>
@@ -43,7 +43,6 @@ export default function Header(){
                         <img src={human} alt="" />
                     </div>
                 </div>
-                    
             </div>
         </div>
     )
