@@ -1,4 +1,4 @@
-// import Slider from "./components/Slider/Slider"
+import Slider from "./components/Slider/Slider"
 import Header from "./components/Header/Header"
 import Mainpage from "./pages/Mainpage/Mainpage"
 
@@ -11,6 +11,7 @@ function App() {
       <div className="container mx-auto">
         <Mainpage/>
       </div>
+      <Slider/>
     </div>
   )
 }

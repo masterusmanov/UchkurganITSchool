@@ -87,24 +87,25 @@ export default function Mainpage(){
             </div>
             <div className="text-[18px] font-nunito flex flex-wrap items-center justify-center gap-6 my-[70px]">
                 <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => setItems(course)}>Barcha kurslar</button>
-                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Dizayn")}>Grafik dizayn kursi</button>
-                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Frontend")}>Frontend kursi</button>
-                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Backend")}>Backend kursi</button>
-                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Foundation")}>Foundation kursi</button>
+                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Dizayn")}>Grafik dizayn</button>
+                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Frontend")}>Frontend</button>
+                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Backend")}>Backend</button>
+                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Foundation")}>Foundation</button>
                 <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Savodxonlik")}>Kompyuter savodxonligi</button>
                 <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Robototexnika")}>Robototexnika</button>
-                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Mobil")}>Mobil dasturlash kursi</button>
+                <button className="font-[600] border border-[#B7B7B7] rounded-lg py-2 px-4 hover:bg-[#0B7077] hover:text-white" onClick={() => filterItem("Mobil")}>Mobil dasturlash</button>
             </div>
-            <div className="flex flex-wrap justify-center gap-6 ">
+            <div className="flex flex-wrap justify-evenly gap-6 ">
                 {items.map((product) => (
-                <div key={product.id} className="w-[300px] shadow-lg shadow-gray-400">
+                <div key={product.id} className="rounded-lg w-[300px] shadow-lg shadow-gray-400 font-nunito ">
                     <div className="bg-[#e6e6e6] rounded-lg">
-                    <div className="image w-[80%] flex">
-                        <img src={product.img} alt="" className="h-[200px] ml-[45px] mt-[25px] object-cover rounded-xl" />
-                    </div>
-                    <h1 className="text-[#fff] text-[20px] p-2 rounded-md cursor-pointer bg-[#04A674] text-center pt-[5px] mt-[10px] ml-[45px]">{product.title}</h1>
-                    <p>{product.category}</p>
-                    <h1 className="text-[#000] text-[22px] font-bold mt-[10px] ml-[45px]">{product.description.slice(0, 35)}...</h1>
+                            <img src={product.img} alt="" className="p-10" />
+                        <div className="bg-white p-5">
+                            <h1 className="text-[18px] font-[700]">{product.title}</h1>
+                            <p className="font-[600] text-gray-500">{product.category}</p>
+                            <p className="text-[#000] text-[14px] font-bold mt-[10px]">{product.description.slice(0, 50)} . . .</p>
+                        <button className="float-right my-[15px] text-[#77BF44] font-[700]">Batafsil</button>
+                        </div>
                     </div>
                 </div>
                 ))}

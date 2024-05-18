@@ -39,7 +39,7 @@ const images = [
 
 const Slider = () => {
   return (
-    <div className="gallery-container">
+    <div className="gallery-container my-[100px]">
       <div className="gallery">
         {images.map((src, index) => (
           <img key={index} src={src} alt={`Image ${index + 1}`} className='rounded-xl object-cover'/>
