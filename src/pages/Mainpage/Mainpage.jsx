@@ -10,6 +10,7 @@ import django from "../../assets/images/main/django.png";
 import savodxon from "../../assets/images/main/savodxon.png";
 import Kotlin from "../../assets/images/main/Kotlin.png";
 import robotics from "../../assets/images/main/robotics.png";
+import loca from "../../assets/images/main/loca.webp";
 import Slider from "../../components/Slider/Slider";
 
 const course = [
@@ -207,6 +208,56 @@ export default function Mainpage(){
                             </div>
                             <button type="submit" className="text-white rounded-lg w-full mt-[50px] bg-[#0B7077] py-3 px-6">Submit</button>
                         </form>
+                    </div>
+                </div>
+                <div>
+                    <div className="font-nunito font-[700] text-[48px] mt-[150px]">
+                        <h1 className="text-[#0B7077]">Bizning manzilimiz</h1>
+                        <img src={line2} alt="line" className="mx-[200px]"/>
+                    </div>
+                    <div className="my-[100px] flex justify-center gap-10">
+                        <div className="w-1/2 bg-[#F9F7F3] rounded-lg p-10 flex flex-col gap-10">
+                            <div>
+                                <div className="flex items-center gap-6 font-nunito text-[28px] font-bold">
+                                    <img src={loca} alt="location" className="w-[30px]"/>
+                                    <h2 className="text-gray-500">Manzilimiz:</h2>
+                                </div>
+                                <h2 className="text-[24px] font-[700] ml-[50px]">Namangan viloyati, Uchqo`rg`on tumani, Andijon ko`chasi 86-uy</h2>
+                            </div>
+                            <div>
+                                <div className="flex items-center gap-6 font-nunito text-[28px] font-bold">
+                                    <i className='bx bx-current-location text-[#E82327]'></i>
+                                    <h2 className="text-gray-500">Mo`ljal:</h2>
+                                </div>
+                                <h2 className="text-[24px] font-[700] ml-[50px]">Sobiq Uchqo`rg`on Iqtisodiyot kolleji, hozirgi Uchqo`rg`on 1-sonli kasb-hunar maktabi</h2>
+                            </div>
+                            <div>
+                                <div className="flex items-center gap-6 font-nunito text-[28px] font-bold">
+                                    <i className='bx bx-alarm text-[#E82327]'></i>
+                                    <h2 className="text-gray-500">Ish vaqti:</h2>
+                                </div>
+                                <h2 className="text-[24px] font-[700] ml-[50px]">09:00 - 18:00</h2>
+                            </div>
+                            <div>
+                                <div className="flex items-center gap-6 font-nunito text-[28px] font-bold">
+                                    <i className='bx bx-phone text-[#E82327]'></i>
+                                    <h2 className="text-gray-500">Telefon:</h2>
+                                </div>
+                                <h2 className="text-[24px] font-[700] ml-[50px]">+998913604254</h2>
+                            </div>
+                        </div>
+                        <div className="w-1/2 ">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5056.008808882155!2d72.07887262265041!3d41.10568387891249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bcacee34000001%3A0xcaf68d83b39a580b!2z0K3QutC-0L3QvtC80LjRh9C10YHQutC40Lkg0LrQvtC70LvQtdC00LYg0KPRh9C60YPRgNCz0LDQvdCw!5e0!3m2!1sru!2s!4v1716110992196!5m2!1sru!2s"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="rounded-lg "
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
