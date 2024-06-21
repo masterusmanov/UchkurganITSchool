@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 import line from "../../assets/images/main/line.svg";
 import line2 from "../../assets/images/main/line2.svg";
 import frontend from "../../assets/images/main/frontend.png";
@@ -75,10 +76,11 @@ export default function Mainpage(){
 
     const [items, setItems] = useState(course);
     const [formData, setFormData] = useState({
-        name: '',
+        full_name: '',
         phone: '',
         agreeToOffer: false
       });
+    const [isSubmitted, setIsSubmitted] = useState(false);
     
 
     const filterItem = (category) => {
@@ -95,16 +97,36 @@ export default function Mainpage(){
         });
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!formData.agreeToOffer) {
-          alert('You must agree to the offer before submitting the form.');
-          return;
+        try {
+            const response = await axios.post('http://localhost:1987/api/web-name', formData);
+            console.log('Response:', response.data);
+            setIsSubmitted(true);
+        } catch (error) {
+            if (error.response) {
+                console.error('Error data:', error.response.data);
+                console.error('Error status:', error.response.status);
+                console.error('Error headers:', error.response.headers);
+            } else if (error.request) {
+                console.error('Error request:', error.request);
+            } else {
+                console.error('Error message:', error.message);
+            }
         }
-        // Handle form submission logic
-        console.log('Form submitted:', formData);
-      };
-    
+     };   
+     
+     useEffect(() => {
+        if (isSubmitted) {
+            setFormData({
+                full_name: '',
+                phone: '',
+                agreeToOffer: false,
+            });
+            setIsSubmitted(false);
+        }
+    }, [isSubmitted]);
+
 
     return(
         <div>
@@ -173,9 +195,9 @@ export default function Mainpage(){
                                 Ismingiz:
                                 <input
                                     type="text"
-                                    name="name"
+                                    name="full_name"
                                     placeholder="Ismingiz"
-                                    value={formData.name}
+                                    value={formData.full_name}
                                     onChange={handleChange}
                                     className="outline-none border border-[#D0D5DD] rounded-lg p-3 w-full my-3"
                                 />
