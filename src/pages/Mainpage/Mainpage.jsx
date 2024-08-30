@@ -78,7 +78,7 @@ export default function Mainpage(){
     const [formData, setFormData] = useState({
         full_name: '',
         phone: '',
-        agreeToOffer: false
+        // agreeToOffer: false
       });
     const [isSubmitted, setIsSubmitted] = useState(false);
     
@@ -90,17 +90,22 @@ export default function Mainpage(){
         setItems(updatedItems);
     };
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
+        const { name, value } = e.target;
         setFormData({
-          ...formData,
-          [name]: type === 'checkbox' ? checked : value
+            ...formData,
+            [name]: value
         });
-      };
+    };
     
       const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            const response = await axios.post('http://localhost:1987/api/web-name', formData);
+            const response = await axios.post('http://localhost:1987/api/web-name', formData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                  },
+            });
             console.log('Response:', response.data);
             setIsSubmitted(true);
         } catch (error) {
@@ -121,7 +126,7 @@ export default function Mainpage(){
             setFormData({
                 full_name: '',
                 phone: '',
-                agreeToOffer: false,
+                // agreeToOffer: false,
             });
             setIsSubmitted(false);
         }
@@ -221,8 +226,6 @@ export default function Mainpage(){
                                 <input
                                     type="checkbox"
                                     name="agreeToOffer"
-                                    checked={formData.agreeToOffer}
-                                    onChange={handleChange}
                                     className="mx-[10px]"
                                 />
                                 Shaxsiy ma`lumotlarni <span><a href="#" className="text-blue-500 underline">qayta ishlanishiga</a></span> roziman
